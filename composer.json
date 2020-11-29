@@ -1,9 +1,5 @@
 {
   "name": "tobyink/foogallery-bootstrapped-gallery-template",
   "version": "1.0.1",
-  "type": "wordpress-plugin",
-  "dist": {
-    "type": "vcs",
-    "url": "git@github.com:tobyink/php-wp-foogallery-bootstrapped-gallery-template.git"
-  }
+  "type": "wordpress-plugin"
 }
