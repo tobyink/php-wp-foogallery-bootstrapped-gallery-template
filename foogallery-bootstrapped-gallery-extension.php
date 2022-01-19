@@ -128,6 +128,13 @@ if ( !class_exists( 'Bootstrapped_Gallery_Template_FooGallery_Extension' ) ) {
 						'type'    => 'text'
 					),
 					array(
+						'id'      => 'heading-tag',
+						'title'   => __('Heading tag', 'foogallery-bootstrapped-gallery'),
+						'desc'    => __('HTML tag to use for image heading', 'foogallery-bootstrapped-gallery'),
+						'default' => 'h1',
+						'type'    => 'text'
+					),
+					array(
 						'id'      => 'heading-classes',
 						'title'   => __('Heading classes', 'foogallery-bootstrapped-gallery'),
 						'desc'    => __('Additional HTML classes to add to headings', 'foogallery-bootstrapped-gallery'),
@@ -135,10 +142,24 @@ if ( !class_exists( 'Bootstrapped_Gallery_Template_FooGallery_Extension' ) ) {
 						'type'    => 'text'
 					),
 					array(
+						'id'      => 'subheading-tag',
+						'title'   => __('Subheading tag', 'foogallery-bootstrapped-gallery'),
+						'desc'    => __('HTML tag to use for image subheading', 'foogallery-bootstrapped-gallery'),
+						'default' => 'h2',
+						'type'    => 'text'
+					),
+					array(
 						'id'      => 'subheading-classes',
 						'title'   => __('Subheading classes', 'foogallery-bootstrapped-gallery'),
 						'desc'    => __('Additional HTML classes to add to subheadings', 'foogallery-bootstrapped-gallery'),
 						'default' => '',
+						'type'    => 'text'
+					),
+					array(
+						'id'      => 'description-tag',
+						'title'   => __('Description tag', 'foogallery-bootstrapped-gallery'),
+						'desc'    => __('HTML tag to use for image description', 'foogallery-bootstrapped-gallery'),
+						'default' => 'p',
 						'type'    => 'text'
 					),
 					array(

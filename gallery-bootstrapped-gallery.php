@@ -12,8 +12,11 @@ $settings            = $current_foogallery->settings;
 $cell_classes        = $settings['bootstrapped-gallery_cell-classes'];
 $figure_classes      = $settings['bootstrapped-gallery_figure-classes'];
 $img_classes         = $settings['bootstrapped-gallery_img-classes'];
+$heading_tag         = $settings['bootstrapped-gallery_heading-tag'];
 $heading_classes     = $settings['bootstrapped-gallery_heading-classes'];
+$subheading_tag      = $settings['bootstrapped-gallery_subheading-tag'];
 $subheading_classes  = $settings['bootstrapped-gallery_subheading-classes'];
+$description_tag     = $settings['bootstrapped-gallery_description-tag'];
 $description_classes = $settings['bootstrapped-gallery_description-classes'];
 
 $layouts = array(
@@ -110,16 +113,16 @@ require_once 'lib_autolink.php';
 				$startlink = sprintf("<a href=\"%s\">", htmlspecialchars($image->custom_url));
 				$endlink   = '</a>';
 			}
-						
+			
 			print "\t<section class=\"col-md-${cellsize} ${cell_classes}\">\n";
 			print "\t\t<figure class=\"${figure_classes}\">\n";
 			printf("\t\t\t%s<img class=\"${img_classes}\" src=\"%s\" alt=\"%s\" title=\"%s\">%s\n", $startlink, htmlspecialchars($image->url), htmlspecialchars($image->alt), htmlspecialchars($image->title), $endlink);
-			printf("\t\t\t<h1 class=\"${heading_classes}\">%s%s%s</h1>\n", $startlink, str_replace('  ','<br>', htmlspecialchars($image->title)), $endlink);
+			printf("\t\t\t<%s class=\"${heading_classes}\">%s%s%s</%s>\n", $heading_tag, $startlink, str_replace('  ','<br>', htmlspecialchars($image->title)), $endlink, $heading_tag);
 			if (strlen($image->caption)) {
-				printf("\t\t\t<h2 class=\"${subheading_classes}\">%s</h2>\n", str_replace('  ','<br>', htmlspecialchars($image->caption)));
+				printf("\t\t\t<%s class=\"${subheading_classes}\">%s</%s>\n", $subheading_tag, str_replace('  ','<br>', htmlspecialchars($image->caption)), $subheading_tag);
 			}
 			if (strlen($image->description)) {
-  			printf("\t\t\t<p class=\"${description_classes}\">%s</p>\n", autolink_email(autolink(str_replace("\n\n", "</p><p>", htmlspecialchars($image->description)))));
+				printf("\t\t\t<%s class=\"${description_classes}\">%s</%s>\n", $description_tag, autolink_email(autolink(str_replace("\n\n", "</p><p>", htmlspecialchars($image->description)))), $description_tag);
 			}
 			print "\t\t</figure>\n";
 			print "\t</section>\n";
